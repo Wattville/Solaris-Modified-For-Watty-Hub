@@ -1004,10 +1004,12 @@ function SolarisLib:New(Config)
                         Option.MouseButton1Click:Connect(function()
                             if table.find(Dropdown.Value, option) then				
 								table.remove(Dropdown.Value, table.find(Dropdown.Value, option))
+								DropMain.Btn.Title.Text = text .. " - " .. table.concat(Dropdown.Value, ", ")
 								Option.ItemText.Text = option
 								callback(Dropdown.Value)	
 							else
 								table.insert(Dropdown.Value, option)
+								DropMain.Btn.Title.Text = text .. " - " .. table.concat(Dropdown.Value, ", ")
 								Option.ItemText.Text = option.." (Selected)"
 								callback(Dropdown.Value)
 							end
