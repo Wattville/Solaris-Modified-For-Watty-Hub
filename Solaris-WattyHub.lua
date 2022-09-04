@@ -883,7 +883,7 @@ function SolarisLib:New(Config)
 
                 function Slider:Set(val)
 					SliderMain.SliderVal.Text = tostring(val)
-                    SliderMain.SliderFrame.SliderCurrentFrame.Size = UDim2.new(val, 0, 1, 0)
+                    SliderMain.SliderFrame.SliderCurrentFrame.Size = UDim2.new(val, 0, max, 0)
                     Slider.Value = val
 					return callback(Slider.Value)
 				end	
