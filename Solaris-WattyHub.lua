@@ -766,7 +766,7 @@ function SolarisLib:New(Config)
         end)
 
 
-        
+        print("tab")
         Tab.MouseButton1Click:Connect(function()
             for i,v in next, MFrame.TabMenu.Menu.Holder:GetChildren() do
                 if v:IsA("TextButton") then
