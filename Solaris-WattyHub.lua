@@ -727,7 +727,7 @@ function SolarisLib:New(Config)
             end
         end)
     end
-    print("E")
+    
     function SolarisLib:SaveCfg(name)
         local content = {}
         for i,v in pairs(SolarisLib.Flags) do
@@ -736,7 +736,7 @@ function SolarisLib:New(Config)
         writefile(Config.FolderToSave .. "/configs/" .. name .. ".txt", tostring(http:JSONEncode(content)))
     end
     
-
+	print("W")
     local TabHolder = {}
     function TabHolder:Tab(text)
         local Tab = TabPreset:Clone()
@@ -766,7 +766,7 @@ function SolarisLib:New(Config)
                 Container.CanvasSize = UDim2.new(0,0,0,Container.UIListLayout.AbsoluteContentSize.Y + 26)
             end
         end)
-
+	print("E")
 
         
         Tab.MouseButton1Click:Connect(function()
