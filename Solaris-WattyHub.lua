@@ -736,7 +736,7 @@ function SolarisLib:New(Config)
         writefile(Config.FolderToSave .. "/configs/" .. name .. ".txt", tostring(http:JSONEncode(content)))
     end
     
-	print("W")
+	
     local TabHolder = {}
     function TabHolder:Tab(text)
         local Tab = TabPreset:Clone()
@@ -759,12 +759,12 @@ function SolarisLib:New(Config)
             SolarisLib.CurrentTab = Container  
         end    
 
-        spawn(function()
-            while wait() do
+        --spawn(function()
+            --while wait() do
                 Tab.TextColor3 = SolarisLib.Themes[SolarisLib.Settings.Theme].TextColor
                 Tab.BackgroundColor3 = SolarisLib.Themes[SolarisLib.Settings.Theme].TabToggled
                 Container.CanvasSize = UDim2.new(0,0,0,Container.UIListLayout.AbsoluteContentSize.Y + 26)
-            end
+            --end
         end)
 	print("E")
 
