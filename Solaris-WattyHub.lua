@@ -620,7 +620,8 @@ function SolarisLib:New(Config)
         local appearance = Settings:Tab("Appearance")
         appearance:Dropdown("Theme", "The look of the user interface", {"Default", "Discord", "Red", "Green", "Blue"}, "Default", "Theme")
 
-    end 
+    end
+	print("W")
     MusicConstructor()
     SettingsConstructor()
 
@@ -766,7 +767,7 @@ function SolarisLib:New(Config)
         end)
 
 
-        print("tab")
+        
         Tab.MouseButton1Click:Connect(function()
             for i,v in next, MFrame.TabMenu.Menu.Holder:GetChildren() do
                 if v:IsA("TextButton") then
