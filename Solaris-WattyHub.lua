@@ -766,7 +766,7 @@ function SolarisLib:New(Config)
                 Container.CanvasSize = UDim2.new(0,0,0,Container.UIListLayout.AbsoluteContentSize.Y + 26)
             end
         end)
-	print("E")
+	
 
         
         Tab.MouseButton1Click:Connect(function()
@@ -1009,7 +1009,7 @@ function SolarisLib:New(Config)
 								callback(Dropdown.Value)	
 							else
 								table.insert(Dropdown.Value, option)
-								Option.ItemText.Text = option.." (Selected)"
+								Option.ItemText.Text = option.."✔️"
 								callback(Dropdown.Value)
 							end
                             Ripple(Option)
