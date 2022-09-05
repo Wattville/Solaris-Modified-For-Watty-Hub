@@ -1009,7 +1009,7 @@ function SolarisLib:New(Config)
 								callback(Dropdown.Value)	
 							else
 								table.insert(Dropdown.Value, option)
-								Option.ItemText.Text = option.."✔️"
+								Option.ItemText.Text = option.."(Selected)"
 								callback(Dropdown.Value)
 							end
                             Ripple(Option)
