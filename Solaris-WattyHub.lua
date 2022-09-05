@@ -169,7 +169,7 @@ local SolarisLib = {
             Colorpicker = Color3.fromRGB(30,30,30),
             Label = Color3.fromRGB(30,30,30),
             Bind = Color3.fromRGB(30,30,30)
-        },
+        }
     },
     Settings = {
         Theme = "BloodRed",
