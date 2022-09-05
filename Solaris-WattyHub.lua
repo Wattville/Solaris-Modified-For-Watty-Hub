@@ -172,7 +172,7 @@ local SolarisLib = {
         }
     },
     Settings = {
-        Theme = "BloodRed",
+        Theme = "Default",
         ShowFriendsOnLaunch = true,
         ShowMusicOnLaunch = false,
         CloseBind = "RightControl"
