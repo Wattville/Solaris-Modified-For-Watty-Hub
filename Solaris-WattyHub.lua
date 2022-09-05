@@ -147,7 +147,7 @@ local SolarisLib = {
             Colorpicker = Color3.fromRGB(40,55,40),
             Label = Color3.fromRGB(40,55,40),
             Bind = Color3.fromRGB(40,55,40)
-        }
+        },
 	BloodRed = {
             MainFrame = Color3.fromRGB(22, 28, 36),
             TopBar = Color3.fromRGB(255,0,0),
