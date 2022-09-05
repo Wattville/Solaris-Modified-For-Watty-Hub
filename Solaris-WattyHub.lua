@@ -149,12 +149,13 @@ local SolarisLib = {
             Bind = Color3.fromRGB(40,55,40)
         },
 	BloodRed = {
-            MainFrame = Color3.fromRGB(22, 28, 36),
+            Default = {
+            MainFrame = Color3.fromRGB(0,0,0),
             TopBar = Color3.fromRGB(255,0,0),
             TextColor =  Color3.fromRGB(255,255,255),
-            Menu = Color3.fromRGB(22, 28, 36),
-            TabToggled = Color3.fromRGB(22, 28, 36),
-            Button = Color3.fromRGB(255,0,0),
+            Menu = Color3.fromRGB(37, 37, 37),
+            TabToggled = Color3.fromRGB(255,0,0),
+            Button = Color3.fromRGB(30,30,30),
             ButtonHold = Color3.fromRGB(31,31,31),
             Toggle = Color3.fromRGB(30,30,30),
             ToggleFrame = Color3.fromRGB(55,55,55),
@@ -169,6 +170,7 @@ local SolarisLib = {
             Colorpicker = Color3.fromRGB(30,30,30),
             Label = Color3.fromRGB(30,30,30),
             Bind = Color3.fromRGB(30,30,30)
+        },
         }
     },
     Settings = {
