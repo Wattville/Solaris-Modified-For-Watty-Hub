@@ -149,7 +149,6 @@ local SolarisLib = {
             Bind = Color3.fromRGB(40,55,40)
         },
 	BloodRed = {
-            Default = {
             MainFrame = Color3.fromRGB(0,0,0),
             TopBar = Color3.fromRGB(255,0,0),
             TextColor =  Color3.fromRGB(255,255,255),
@@ -170,8 +169,7 @@ local SolarisLib = {
             Colorpicker = Color3.fromRGB(30,30,30),
             Label = Color3.fromRGB(30,30,30),
             Bind = Color3.fromRGB(30,30,30)
-        },
-        }
+	}
     },
     Settings = {
         Theme = "Default",
