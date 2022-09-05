@@ -148,9 +148,31 @@ local SolarisLib = {
             Label = Color3.fromRGB(40,55,40),
             Bind = Color3.fromRGB(40,55,40)
         }
+	BloodRed = {
+            MainFrame = Color3.fromRGB(22, 28, 36),
+            TopBar = Color3.fromRGB(255,0,0),
+            TextColor =  Color3.fromRGB(255,255,255),
+            Menu = Color3.fromRGB(37, 37, 37),
+            TabToggled = Color3.fromRGB(43,43,43),
+            Button = Color3.fromRGB(30,30,30),
+            ButtonHold = Color3.fromRGB(31,31,31),
+            Toggle = Color3.fromRGB(30,30,30),
+            ToggleFrame = Color3.fromRGB(55,55,55),
+            ToggleToggled = Color3.fromRGB(22, 168, 76),
+            Slider = Color3.fromRGB(30,30,30),
+            SliderBar = Color3.fromRGB(25, 25, 25),
+            SliderInc = Color3.fromRGB(60, 60, 60),
+            Dropdown = Color3.fromRGB(30,30,30),
+            DropdownItem = Color3.fromRGB(30,30,30),
+            Textbox = Color3.fromRGB(30,30,30),
+            TextboxFrame = Color3.fromRGB(25, 25, 25),
+            Colorpicker = Color3.fromRGB(30,30,30),
+            Label = Color3.fromRGB(30,30,30),
+            Bind = Color3.fromRGB(30,30,30)
+        },
     },
     Settings = {
-        Theme = "Default",
+        Theme = "BloodRed",
         ShowFriendsOnLaunch = true,
         ShowMusicOnLaunch = false,
         CloseBind = "RightControl"
