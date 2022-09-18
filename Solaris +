@@ -959,12 +959,12 @@ function SolarisLib:New(Config)
                             return Toggle
                         else
                             local Toggle = {Value = false}
-                            function Toggle:Set() 
-                            end
-                            function Toggle:SetText()
-                            end
-                            function Toggle:Destroy()
-                            end
+                            --function Toggle:Set() 
+                            --end
+                            --function Toggle:SetText()
+                            --end
+                            --function Toggle:Destroy()
+                            --end
                             Toggle.Visible = false
                         end
                     end    
