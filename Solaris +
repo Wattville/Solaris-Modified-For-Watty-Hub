@@ -968,7 +968,7 @@ function SolarisLib:New(Config)
                             Toggle.Visible = false
                         end
                     end    
-                    function ItemHold:Slider(text,min,max,start,inc,flag, tier, callback)
+                    function ItemHold:Slider(text,min,max,inc,flag, tier, callback)
                         if wtier >= tier then
                             local Slider,SliderMain = {Value = start}, game:GetObjects("rbxassetid://6967573727")[1]
                             SliderMain.Parent = Section
@@ -992,7 +992,7 @@ function SolarisLib:New(Config)
                             local connectionc = game:GetService("UserInputService").InputChanged:Connect(function(input) if dragging and input.UserInputType == Enum.UserInputType.MouseMovement then move(input) end end)
 
                             function Slider:Set(val)
-                                SliderMain.SliderVal.Text = "0"
+                                SliderMain.SliderVal.Text = val
                                 SliderMain.SliderFrame.SliderCurrentFrame.Size = UDim2.new(0, 0, 0, 0)
                                 Slider.Value = val
                                 return callback(Slider.Value)
