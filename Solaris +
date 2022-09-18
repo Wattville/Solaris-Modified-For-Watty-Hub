@@ -855,7 +855,7 @@ function SolarisLib:New(Config)
 
             local SectionHold = {}
             function SectionHold:Section(text, tier)
-                if tier <= wtier then
+                if tier >= wtier then
                     local Section = SectionPreset:Clone()
                     Section.Parent = Container
                     Section.SectionTitle.Text = text
@@ -917,7 +917,7 @@ function SolarisLib:New(Config)
                     end    
                     function ItemHold:Toggle(text,flag, tier,callback)
                         if tier >= wtier then
-                            local Toggle = {Value = false}, 
+                            local Toggle = {Value = false}
                             local ToggleMain = game:GetObjects("rbxassetid://6963155498")[1]
                             local breakr = false
                             ToggleMain.Parent = Section
@@ -1378,63 +1378,65 @@ function SolarisLib:New(Config)
                             Label.Visible = false
                         end
                     end
-                    function ItemHold:Textbox(text,disappear,callback)
-                        local Textbox, TextboxFrame = {}, game:GetObjects("rbxassetid://7147292392")[1]
-                        TextboxFrame.Parent = Section
-                        TextboxFrame.Title.Text = text
-                        TextboxFrame.Name = text .. "element"
-                        local breakr = false
-
-                        TextboxFrame.Box.Changed:Connect(function()
-                            TextboxFrame.Box.Size = UDim2.new(0,TextboxFrame.Box.TextBounds.X + 16,0,22)
-                        end)
-                        TextboxFrame.Box.PlaceholderText = "                  "
-
-                        TextboxFrame.InputBegan:Connect(function(input)
-                            if input.UserInputType == Enum.UserInputType.MouseButton1 then
-                                TextboxFrame.Box:CaptureFocus()
-                            end
-                        end)
-                        
-
-                        TextboxFrame.Box.FocusLost:Connect(function()
-                            local txt = TextboxFrame.Box.Text
-                            if disappear then
-                                TextboxFrame.Box.Text = ""
-                            end  
-                            return callback(txt)
-                        end)
-
-                        UserInputService.InputBegan:Connect(function(input)
-                            if input.KeyCode == Enum.KeyCode.Escape and TextboxFrame.Box:IsFocused() then
-                                TextboxFrame.Box:ReleaseFocus()
-                            end
-                        end)
-                        function Textbox:SetText(text)
+                    function ItemHold:Textbox(text,disappear,callback, tier)
+                        if tier >= wtier then
+                            local Textbox, TextboxFrame = {}, game:GetObjects("rbxassetid://7147292392")[1]
+                            TextboxFrame.Parent = Section
                             TextboxFrame.Title.Text = text
-                        end
-                        function Textbox:Destroy()
-                            TextboxFrame:Destroy()
-                            breakr = true
-                        end
-                        spawn(function()
-                            while not breakr do wait()
-                            TextboxFrame.BackgroundColor3 = SolarisLib.Themes[SolarisLib.Settings.Theme].Textbox
-                            TextboxFrame.Title.TextColor3 = SolarisLib.Themes[SolarisLib.Settings.Theme].TextColor
-                            TextboxFrame.Box.BackgroundColor3 = SolarisLib.Themes[SolarisLib.Settings.Theme].TextboxFrame
-                            TextboxFrame.Box.TextColor3 = SolarisLib.Themes[SolarisLib.Settings.Theme].TextColor
+                            TextboxFrame.Name = text .. "element"
+                            local breakr = false
+
+                            TextboxFrame.Box.Changed:Connect(function()
+                                TextboxFrame.Box.Size = UDim2.new(0,TextboxFrame.Box.TextBounds.X + 16,0,22)
+                            end)
+                            TextboxFrame.Box.PlaceholderText = "                  "
+
+                            TextboxFrame.InputBegan:Connect(function(input)
+                                if input.UserInputType == Enum.UserInputType.MouseButton1 then
+                                    TextboxFrame.Box:CaptureFocus()
+                                end
+                            end)
+                            
+
+                            TextboxFrame.Box.FocusLost:Connect(function()
+                                local txt = TextboxFrame.Box.Text
+                                if disappear then
+                                    TextboxFrame.Box.Text = ""
+                                end  
+                                return callback(txt)
+                            end)
+
+                            UserInputService.InputBegan:Connect(function(input)
+                                if input.KeyCode == Enum.KeyCode.Escape and TextboxFrame.Box:IsFocused() then
+                                    TextboxFrame.Box:ReleaseFocus()
+                                end
+                            end)
+                            function Textbox:SetText(text)
+                                TextboxFrame.Title.Text = text
                             end
-                        end)
-                        Textbox.Visible = true
-                        return Textbox
-                    else
-                        local t = {}
-                        t.Visible = false
-                        function t:SetText()
+                            function Textbox:Destroy()
+                                TextboxFrame:Destroy()
+                                breakr = true
+                            end
+                            spawn(function()
+                                while not breakr do wait()
+                                TextboxFrame.BackgroundColor3 = SolarisLib.Themes[SolarisLib.Settings.Theme].Textbox
+                                TextboxFrame.Title.TextColor3 = SolarisLib.Themes[SolarisLib.Settings.Theme].TextColor
+                                TextboxFrame.Box.BackgroundColor3 = SolarisLib.Themes[SolarisLib.Settings.Theme].TextboxFrame
+                                TextboxFrame.Box.TextColor3 = SolarisLib.Themes[SolarisLib.Settings.Theme].TextColor
+                                end
+                            end)
+                            Textbox.Visible = true
+                            return Textbox
+                        else
+                            local t = {}
+                            t.Visible = false
+                            function t:SetText()
+                            end
+                            function t:Destroy()
+                            end
+                            return t
                         end
-                        function t:Destroy()
-                        end
-                        return t
                     end    
                     function ItemHold:Bind(text,preset,holdmode,flag,callback)
                         local Bind, BindFrame = {Value, Binding = false, Holding = false}, game:GetObjects("rbxassetid://7126874744")[1]
