@@ -862,8 +862,12 @@ function SolarisLib:New(Config)
 
                     spawn(function()
                         while wait() do
-                            Section.SectionTitle.TextColor3 = SolarisLib.Themes[SolarisLib.Settings.Theme].TextColor
-                            Section.Size = UDim2.new(0.9,0,0,Section.UIListLayout.AbsoluteContentSize.Y)
+                            if wtier >= tier then
+                                Section.SectionTitle.TextColor3 = SolarisLib.Themes[SolarisLib.Settings.Theme].TextColor
+                                Section.Size = UDim2.new(0.9,0,0,Section.UIListLayout.AbsoluteContentSize.Y)
+                            else
+                                break
+                            end
                         end
                     end)
                     local ItemHold = {}
