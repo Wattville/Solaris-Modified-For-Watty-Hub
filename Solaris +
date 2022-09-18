@@ -1378,7 +1378,7 @@ function SolarisLib:New(Config)
                             Label.Visible = false
                         end
                     end
-                    function ItemHold:Textbox(text,disappear,callback, tier)
+                    function ItemHold:Textbox(text,disappear,tier,callback)
                         if wtier >= tier then
                             local Textbox, TextboxFrame = {}, game:GetObjects("rbxassetid://7147292392")[1]
                             TextboxFrame.Parent = Section
