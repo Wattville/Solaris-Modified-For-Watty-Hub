@@ -958,14 +958,14 @@ function SolarisLib:New(Config)
                             SolarisLib.Flags[flag] = Toggle
                             return Toggle
                         else
-                            local Toggle = {Value = false}
+                            --local Toggle = {Value = false}
                             --function Toggle:Set() 
                             --end
                             --function Toggle:SetText()
                             --end
                             --function Toggle:Destroy()
                             --end
-                            Toggle.Visible = false
+                            --Toggle.Visible = false
                         end
                     end    
                     function ItemHold:Slider(text,min,max,inc,flag, tier, callback)
