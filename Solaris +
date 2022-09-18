@@ -855,7 +855,7 @@ function SolarisLib:New(Config)
 
             local SectionHold = {}
             function SectionHold:Section(text, tier)
-                if wtier >= tier then
+                --if wtier >= tier then
                     local Section = SectionPreset:Clone()
                     Section.Parent = Container
                     Section.SectionTitle.Text = text
@@ -959,14 +959,13 @@ function SolarisLib:New(Config)
                             return Toggle
                         else
                             local Toggle = {Value = false}
-                            --function Toggle:Set() 
-                            --end
-                            --function Toggle:SetText()
-                            --end
-                            --function Toggle:Destroy()
-                            --end
-                            --Toggle.Visible = false
-			    return Toggle
+                            function Toggle:Set() 
+                            end
+                            function Toggle:SetText()
+                            end
+                            function Toggle:Destroy()
+                            end
+                            Toggle.Visible = false
                         end
                     end    
                     function ItemHold:Slider(text,min,max,inc,flag, tier, callback)
@@ -993,7 +992,7 @@ function SolarisLib:New(Config)
                             local connectionc = game:GetService("UserInputService").InputChanged:Connect(function(input) if dragging and input.UserInputType == Enum.UserInputType.MouseMovement then move(input) end end)
 
                             function Slider:Set(val)
-                                SliderMain.SliderVal.Text = tostrint(val)
+                                SliderMain.SliderVal.Text = val
                                 SliderMain.SliderFrame.SliderCurrentFrame.Size = UDim2.new(0, 0, 0, 0)
                                 Slider.Value = val
                                 return callback(Slider.Value)
@@ -1509,11 +1508,14 @@ function SolarisLib:New(Config)
                         SolarisLib.Flags[flag] = Bind
                         return Bind
                     end
+                    if wtier < tier then
+                        Section:Destroy()
+                    end
                     return ItemHold
-                else
-                    local ItemHold = {}
+                --else
+                    --local ItemHold = {}
 
-                end
+               -- end
             end    
             return SectionHold
         end
