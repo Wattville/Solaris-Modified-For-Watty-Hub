@@ -800,7 +800,7 @@ function SolarisLib:New(Config)
 	
     local TabHolder = {}
     function TabHolder:Tab(text, tier)
-        if tier >= wtier then
+        if wtier >= tier then
             local Tab = TabPreset:Clone()
             Tab.AutoButtonColor = false
             Tab.Parent = MFrame.TabMenu.Menu.Holder
@@ -855,7 +855,7 @@ function SolarisLib:New(Config)
 
             local SectionHold = {}
             function SectionHold:Section(text, tier)
-                if tier >= wtier then
+                if wtier >= tier then
                     local Section = SectionPreset:Clone()
                     Section.Parent = Container
                     Section.SectionTitle.Text = text
@@ -868,7 +868,7 @@ function SolarisLib:New(Config)
                     end)
                     local ItemHold = {}
                     function ItemHold:Button(text, tier, callback)
-                        if tier >= wtier then
+                        if wtier >= tier then
                             local Button = game:GetObjects("rbxassetid://6937142338")[1]
                             Button.Parent = Section
                             Button.Name = text .. "element"
@@ -916,7 +916,7 @@ function SolarisLib:New(Config)
                         end
                     end    
                     function ItemHold:Toggle(text,flag, tier,callback)
-                        if tier >= wtier then
+                        if wtier >= tier then
                             local Toggle = {Value = false}
                             local ToggleMain = game:GetObjects("rbxassetid://6963155498")[1]
                             local breakr = false
@@ -969,7 +969,7 @@ function SolarisLib:New(Config)
                         end
                     end    
                     function ItemHold:Slider(text,min,max,inc,flag, tier, callback)
-                        if tier >= wtier then
+                        if wtier >= tier then
                             local Slider,SliderMain = {Value = start}, game:GetObjects("rbxassetid://6967573727")[1]
                             SliderMain.Parent = Section
                             SliderMain.SliderText.Text = text
@@ -1033,7 +1033,7 @@ function SolarisLib:New(Config)
                         end
                     end    
                     function ItemHold:Dropdown(text,list,flag,tier,callback)
-                        if tier >= wtier then
+                        if wtier >= tier then
                             local Dropdown,DropMain,OptionPreset = {Value = nil, Toggled = false, Options = list}, game:GetObjects("rbxassetid://7027964359")[1], game:GetObjects("rbxassetid://7021432326")[1]
                             DropMain.Parent = Section
                             DropMain.Btn.Title.Text = text
@@ -1134,7 +1134,7 @@ function SolarisLib:New(Config)
                         end
                     end   
                     function ItemHold:MultiDropdown(text,list,flag,tier,callback)
-                        if tier >= wtier then
+                        if wtier >= tier then
                             local Dropdown,DropMain,OptionPreset = {Value = {}, Toggled = false, Options = list}, game:GetObjects("rbxassetid://7027964359")[1], game:GetObjects("rbxassetid://7021432326")[1]
                             DropMain.Parent = Section
                             DropMain.Btn.Title.Text = text
@@ -1236,7 +1236,7 @@ function SolarisLib:New(Config)
                         end
                     end    
                     function ItemHold:Colorpicker(text,preset,flag,tier,callback)
-                        if tier >= wtier then
+                        if wtier >= tier then
                             local ColorH, ColorS, ColorV = 1, 1, 1
                             local ColorPicker, ColorPreset, DragPreset = {Value = preset, Toggled = false}, game:GetObjects("rbxassetid://7329998014")[1]
                             ColorPreset.Hue.Visible, ColorPreset.Color.Visible = ColorPicker.Toggled, ColorPicker.Toggled
@@ -1345,7 +1345,7 @@ function SolarisLib:New(Config)
                         end
                     end
                     function ItemHold:Label(text, tier)
-                        if tier >= wtier then
+                        if wtier >= tier then
                             local Label, LabelFrame = {}, game:GetObjects("rbxassetid://7032552322")[1]
                             LabelFrame.Parent = Section
                             LabelFrame.Title.Text = text
@@ -1379,7 +1379,7 @@ function SolarisLib:New(Config)
                         end
                     end
                     function ItemHold:Textbox(text,disappear,callback, tier)
-                        if tier >= wtier then
+                        if wtier >= tier then
                             local Textbox, TextboxFrame = {}, game:GetObjects("rbxassetid://7147292392")[1]
                             TextboxFrame.Parent = Section
                             TextboxFrame.Title.Text = text
