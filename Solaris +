@@ -1029,8 +1029,7 @@ function SolarisLib:New(Config)
                     return Slider
                 else
                     local Slider     
-                    local val = 0
-                    function Slider:Set(val)
+                    function Slider:Set()
                     end	
                     function Slider:UpdateText()
                     end
