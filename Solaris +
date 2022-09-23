@@ -1015,7 +1015,7 @@ function SolarisLib:New(Config)
                     end
 
                     spawn(function()
-                        while breakr == false do wait()
+                        while breakr == false and wtier >= tier do wait()
                         SliderMain.BackgroundColor3 = SolarisLib.Themes[SolarisLib.Settings.Theme].Slider
                         SliderMain.SliderFrame.BackgroundColor3 = SolarisLib.Themes[SolarisLib.Settings.Theme].SliderBar
                         SliderMain.SliderFrame.SliderCurrentFrame.BackgroundColor3 = SolarisLib.Themes[SolarisLib.Settings.Theme].SliderInc
