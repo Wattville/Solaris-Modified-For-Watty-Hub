@@ -1030,7 +1030,7 @@ function SolarisLib:New(Config)
                 else
                     local Slider     
                     --function Slider:Set()
-                    end	
+                    --end	
                     function Slider:UpdateText()
                     end
                     function Slider:Destroy()
