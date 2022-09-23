@@ -976,7 +976,6 @@ function SolarisLib:New(Config)
                 end
             end    
             function ItemHold:Slider(text,min,max,inc,flag, tier, callback)
-                if wtier >= tier then
                     local Slider,SliderMain = {Value = start}, game:GetObjects("rbxassetid://6967573727")[1]
                     SliderMain.Parent = Section
                     SliderMain.SliderText.Text = text
@@ -1026,15 +1025,11 @@ function SolarisLib:New(Config)
                     end)
 
                     SolarisLib.Flags[flag] = Slider
+		    if tier > wtier then
+		    	SliderMain:Destroy()
+		    end
                     return Slider
-                else
-                    local Slider	
-                    function Slider:UpdateText()
-                    end
-                    function Slider:Destroy()
-                    end
-                    return Slider
-                end
+                
             end    
             function ItemHold:Dropdown(text,list,flag,tier,callback)
                 if wtier >= tier then
